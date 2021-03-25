@@ -1,0 +1,108 @@
+.widget-area::after{
+    content: ' ';
+    display: table;
+    clear: both;
+}
+.codemagna_widget_promo_box.w-half{
+    float: left;
+    width: calc(50% - 15px);
+}
+.codemagna_widget_promo_box.w-one-third{
+    float: left;
+    width: calc((33.3333%) - 20px);
+}
+.widget-area .codemagna_widget_promo_box.w-half, .widget-area .codemagna_widget_promo_box.w-one-third {
+    margin-right: 30px;
+}
+.widget-area .codemagna_widget_promo_box.w-half:nth-child(2),.widget-area .codemagna_widget_promo_box.w-one-third:nth-child(3){
+    margin-right: 0;
+}
+.codemagna_widget_promo_box:last-of-type{
+    margin-right: 0;
+}
+
+.codemagna_widget_promo_box a.promo-box-wrapper{
+    position: relative;
+    overflow: hidden;
+    display: block;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.codemagna_widget_promo_box a.promo-box-wrapper::before{
+    position: absolute;
+    content: ' ';
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgb(0,0,0,0.1);
+    z-index: 2;
+    transition: all 0.32s ease-out;
+    opacity: 50%;
+}
+
+.codemagna_widget_promo_box .promo-box-title{
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.codemagna_widget_promo_box div.background-image{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-image: var(--background);
+    background-position: center center;
+    background-size: cover;
+    transition: transform 0.32s ease-out;
+}
+
+.codemagna_widget_promo_box .promo-box-content{
+    display: inline-block;
+    padding: 20px 35px;
+    background-color:white;
+    position: relative;
+    z-index: 2;
+}
+
+.codemagna_widget_promo_box a.promo-box-wrapper:hover div.background-image{
+    transform: scale(1.075);
+    transition: transform 0.32s ease-out;
+}
+.codemagna_widget_promo_box a.promo-box-wrapper:hover::before{
+    opacity: 100%;
+    transition: all 0.32s ease-out;
+}
+.codemagna_widget_promo_box .promo-box-title,.codemagna_widget_promo_box .promo-box-subheader{
+    position: relative;
+    z-index: 3;
+}
+
+@media screen and (max-width: 680px){
+    .widget-area .codemagna_widget_promo_box.w-one-third, .widget-area .codemagna_widget_promo_box.w-one-third:nth-child(3){
+        margin-right: auto;
+    }
+    .codemagna_widget_promo_box.w-one-third{
+        float: none;
+        max-width: 480px;
+        width: 100%;
+        clear: both;
+        margin: 0 auto 20px auto;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .widget-area .codemagna_widget_promo_box.w-half, .widget-area .codemagna_widget_promo_box.w-half:nth-child(3){
+        margin-right: auto;
+    }
+    .codemagna_widget_promo_box.w-half{
+        float: none;
+        max-width: 480px;
+        width: 100%;
+        clear: both;
+        margin: 0 auto 20px auto;
+    }
+}
